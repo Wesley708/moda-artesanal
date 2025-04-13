@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/produto.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ana Souza - Moda atesanal</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="">
+          <p>Ana Souza</p>
+          <p class="mea-culpa">Moda Artezanal</p>
+        </a>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#">Loja</a></li>
+          <li><a href="#">Blog</a></li>
+          <li>
+            <a href="#"><img src="assets/img/cart.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="assets/img/user.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-product">
+      <div><img src="assets/img/vestido-rosa2.jpg" alt="" /></div>
+      <div>
+        <h2>Vestido rosa</h2>
+        <h2>R$ 200,00</h2>
+        <label for="tamanho">Tamanho:</label>
+        <select id="tamanho" name="tamanho">
+          <option value="P">P</option>
+          <option value="M">M</option>
+          <option value="G">G</option>
+          <option value="GG">GG</option>
+        </select>
+
+        <label for="quantidade">Quantidade:</label>
+        <div name="quantidade" class="number-input">
+            <button onclick="alterarNumero(-1)">–</button>
+            <input type="number" id="meuNumero" value="0">
+            <button onclick="alterarNumero(1)">+</button>
+          </div>
+        
+        <p>
+            Descrição: Vestido coral artesanal,
+            feito à mão com tecidos leves e delicados.
+            Design elegante e fluído,
+            perfeito para ocasiões especiais
+            ou um toque sofisticado no dia a dia.
+        </p>
+        <button><img src="assets/img/cart.png" alt="">Adicionar ao carrinho</button>
+        <button><img src="assets/img/buy.png" alt="">Comprar</button>
+        <button><img src="assets/img/whatsapp.png" alt="">Dúvidas sobre o produto?</button>
+      </div>
+    </div>
+
+    <footer>
+      <a href="">
+        <div class="box logo">
+          <h2>Ana Souza</h2>
+          <p class="mea-culpa">Moda Artezanal</p>
+        </div>
+      </a>
+      <div class="box">
+        <h3>Endereço:</h3>
+        <p>Rua dos Vestidos, 1000, São Paulo, SP</p>
+      </div>
+      <div class="box">
+        <h3>Redes sociais:</h3>
+        <a href="">
+          <img src="assets/img/instagram.png" alt="" />
+          <p>Instagram</p>
+        </a>
+        <a href="">
+          <img src="assets/img/facebook.png" alt="" />
+          <p>Facebook</p>
+        </a>
+        <a href="">
+          <img src="assets/img/whatsapp.png" alt="" />
+          <p>Whatsapp</p>
+        </a>
+      </div>
+    </footer>
+  </body>
+  <script src="assets/js/script.js"></script>
+</html>
