@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 body {
-    overflow-x: hidden;
-  }
+    overflow-x: hidden; 
+    }
 nav{
     width: 100vw;
     height: 90px;
@@ -85,11 +85,15 @@ nav ul li a:hover{
   }
 
   .container-products{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+
     padding-top: 50px;
+    gap: 30px;
+    justify-content: center;
     padding-bottom: 30px;
+    max-width: calc(3 * 300px + 2 * 30px);
+    margin: auto;
   }
 
   .box-products img {
