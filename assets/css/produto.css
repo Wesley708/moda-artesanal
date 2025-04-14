@@ -16,6 +16,7 @@
     justify-content: start;
   margin: 35px;
   font-family: "Inter Tight", sans-serif;
+  position: relative;
 }
 
 .container-product h2{
@@ -26,6 +27,7 @@
     width: 100%;
     height: auto;
     border-radius: 5px;
+    
 }
 
 .container-product label{
@@ -34,7 +36,7 @@
 .container-product p{
     font-size: 17px;
     margin: 10px 0;
-    font-weight: 400;
+    font-weight: 300;
     text-align: justify;
     width: 80%;
 }
@@ -112,4 +114,17 @@
         height: 50px;
         border-radius: 5px;
         cursor: pointer;
+    }
+
+    .left{
+        background-color: rgba(245, 245, 220, 0);
+        position: absolute;
+        top: 40%;        
+        left: 0;
+    }
+    .right{
+        background-color: rgba(245, 245, 220, 0);
+        position: absolute;
+        top: 40%;        
+        right: 0;
     }
