@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+.post-conteiner{
+    font-family: 'Inter Tight', sans-serif;
+    padding: 40px;
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post-conteiner h2{
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+.post-conteiner img{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.post-conteiner p{
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 30px;
+    width: 100%;
+}
+textarea{
+    width: 600px;
+    height: 100px;
+    font-family: 'Inter Tight', sans-serif;
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #a1a19d;
+    border-radius: 5px;
+}
+button{
+    padding: 4px 15px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 18px;
+    background-color: #E9E6DA;
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.comentarios{
+    display: flex;
+    text-align: end;
+    border: 1px solid #a1a19d;
+    padding: 20px;
+    border-radius: 5px;
+}
+.comentarios img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-color: #e9e6da;
+    padding: 6px;
+    
+}
