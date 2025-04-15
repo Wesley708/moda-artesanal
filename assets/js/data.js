@@ -1,10 +1,10 @@
-let vestidos = [
+export const vestidos = [
     {
         id : 1,
         nome : 'Vestido Rosa',
         descricao : "",
         preco : 200,
-        image : ""    
+        image : "../img/vestido-rosa.jpg"    
     },
     {
         id : 1,
