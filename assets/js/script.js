@@ -6,7 +6,7 @@ function alterarNumero(delta) {
   let navbar = document.querySelector('nav');
 
   navbar.innerHTML = `<div class="logo">
-            <a href="">
+            <a href="index.html">
                 <p>Ana Souza</p>
                 <p class="mea-culpa">Moda Artezanal</p>
             </a>

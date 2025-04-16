@@ -10,10 +10,11 @@
 
 .container-product > div{
   width: 350px;
+  height: 525px;
   display: flex;
   flex-direction: column;
   align-items: start;
-    justify-content: start;
+  justify-content: space-between;
   margin: 35px;
   font-family: "Inter Tight", sans-serif;
   position: relative;
@@ -88,7 +89,7 @@
 
   button{
     margin: 5px 0px;
-    padding: 7px;
+    padding: 10px;
     border: none;
     background-color: #E9E6DA;
     border-radius: 5px;
