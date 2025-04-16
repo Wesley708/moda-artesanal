@@ -8,7 +8,7 @@ vestidos.forEach((vestido) => {
     div.className = "box-products";
 
     div.innerHTML = `
-        <a href="post.html?id=${vestido.id}">
+        <a href="produto.html?id=${vestido.id}">
             <img src="assets/img/${vestido.image}" alt="">
             <div class="overlay-product"></div>
             <h3>${vestido.nome} - R$ ${vestido.preco}</h3>
