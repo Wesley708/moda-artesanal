@@ -16,7 +16,7 @@ function alterarNumero(delta) {
                 <li><a href="./index.html">Loja</a></li>
                 <li><a href="./blog.html">Blog</a></li>
                 <li><a href="#"><img src="assets/img/cart.png" alt=""></a></li>
-                <li><a href="#"><img src="assets/img/user.png" alt=""></a></li>
+                <li><a href="login.html"><img src="assets/img/user.png" alt=""></a></li>
             </ul>
         </div>`;
 
