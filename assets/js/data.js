@@ -50,6 +50,57 @@ export const vestidos = [
         preco : 340,
         image : "vestido-laranja.jpg"
     },
+    {
+        id : 1,
+        nome : 'Vestido Rosa',
+        descricao : `Esse é um vestido rosa
+ feito à mão com tecidos leves e delicados.
+ Design elegante e fluído,
+ perfeito para ocasiões especiais
+ ou um toque sofisticado no dia a dia.`,
+        preco : 200,
+        image : "vestido-rosa2.jpg"    
+    },
+    {
+        id : 2,
+        nome : `Vestido Verde `,
+                descricao : `Esse é um vestido verde feito à mão com tecidos leves e delicados.
+                Design elegante e fluído,
+                perfeito para ocasiões especiais
+                ou um toque sofisticado no dia a dia.`,
+        preco : 300,
+        image : "vestido-verde.jpg"    
+    },
+    {
+        id : 3,
+        nome : 'Tomara que caia',
+        descricao : `Vestido Tomara que caia rosa feito à mão com tecidos leves e   delicados.
+            Design elegante e fluído,
+            perfeito para ocasiões especiais
+            ou um toque sofisticado no dia a dia.`,
+        preco : 350,
+        image : "vestido-tomara-que-caia.jpg"    
+    },
+    {
+        id : 4,
+        nome : "Vestido Salmão",
+        descricao : `Vestido Salmão  feito à mão com tecidos leves e delicados.
+        Design elegante e fluído,
+        perfeito para ocasiões especiais
+        ou um toque sofisticado no dia a dia.`,
+        preco : 330,
+        image : "vestido-salmao.jpg"   
+    },
+    {
+        id : 5,
+        nome : 'Vestido Laranja',
+        descricao : `Lindo vestido na cor laranja feito à mão com tecidos leves e delicados.
+        Design elegante e fluído,
+        perfeito para ocasiões especiais
+        ou um toque sofisticado no dia a dia.`,
+        preco : 340,
+        image : "vestido-laranja.jpg"
+    },
 ];
 
  export const posts = [

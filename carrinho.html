@@ -1,11 +1,16 @@
-function alterarNumero(delta) {
-    const input = document.getElementById('meuNumero');
-    input.value = parseInt(input.value || 0) + delta;
-  }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Souza - Moda atesanal</title>
+</head>
+<body>
 
-  let navbar = document.querySelector('nav');
-
-  navbar.innerHTML = ` <div class="logo">
+    <nav>
+        <div class="logo">
             <a href="index.html">
                 <p>Ana Souza</p>
                 <p class="mea-culpa">Moda Artezanal</p>
@@ -15,11 +20,11 @@ function alterarNumero(delta) {
             <ul>
                 <li><a href="./index.html">Loja</a></li>
                 <li><a href="./blog.html">Blog</a></li>
-                <li><a href="login.html"><img src="assets/img/user.png" alt=""></a></li>
                 <li><a href="#"><img src="assets/img/cart.png" alt="" id="open"></a></li>
+                <li><a href="login.html"><img src="assets/img/user.png" alt=""></a></li>
             </ul>
         </div>
-        <div class="conteiner-carrinho close">
+        <div class="conteiner-carrinho">
             <div class="carrinho">
                 <div>
                     <h2>Resumo da sacola</h2>
@@ -48,16 +53,38 @@ function alterarNumero(delta) {
                     </div>
 
                 </div>
-                
+                <div class="box-carrinho">
+                    <img src="assets/img/vestido-rosa2.jpg" alt="">
+                    <div>
+                        <h2>Vestido Rosa</h2>
+                        <p>R$ 200,00</p>
+                        <p>Tamanho: P</p>
+                        <p>Quantidade: 1</p>
+                        <img class="trash" src="assets/img/trash.png" alt="">                        
+                    </div>
+
+                </div>
                 
                 
             </div>
-        </div>`;
+        </div>
+    </nav>
 
 
-let footer = document.querySelector('footer');
+    <div class="banner-loja">
+        <div class="overlay">
+            <div><h2>Peças artesanais, sustentáveis e exclusivas!</h2></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="container-products">
+        
+        
+        
+    </div>
 
-footer.innerHTML = `<a href="index.html">
+    <footer>
+        <a href="index.html">
             <div class="box logo">
                 <h2>Ana Souza</h2>
                 <p class="mea-culpa">Moda Artezanal</p>
@@ -81,19 +108,9 @@ footer.innerHTML = `<a href="index.html">
                 <img src="assets/img/whatsapp.png" alt="">
                 <p>Whatsapp</p>
             </a>
-        </div>`
-
-
-close = document.querySelector("#close");
-
-close.addEventListener("click", function () {
-    const carrinho = document.querySelector(".conteiner-carrinho");
-    carrinho.classList.add("close");
-});
-
-open = document.querySelector("#open");
-
-open.addEventListener("click", function () {
-    const carrinho = document.querySelector(".conteiner-carrinho");
-    carrinho.classList.remove("close");
-});
+        </div>
+    </footer>
+</body>
+<script type="module" src="assets/js/loja.js"></script>
+<script type="module" src="assets/js/carrinho.js"></script>
+</html>
