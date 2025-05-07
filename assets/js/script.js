@@ -19,10 +19,10 @@ function alterarNumero(delta) {
                 <li><a href="#"><img src="assets/img/cart.png" alt="" id="open"></a></li>
             </ul>
         </div>
-       <div class="conteiner-carrinho" id="carrinho-container">
+       <div class="conteiner-carrinho close" id="carrinho-container">
             <div class="carrinho">
                 <div class="carrinho-header">
-                    <h2>Resumo da sacola</h2>
+                    <h2>Resumo do carrinho</h2>
                     <img class="fechar" id="close" src="assets/img/close.png" alt="Fechar carrinho">
                 </div>
                 <p>Sua sacola tem 3 itens</p>
@@ -49,7 +49,18 @@ function alterarNumero(delta) {
                             <img class="trash" src="assets/img/trash.png" alt="Remover item">                        
                         </div>
                     </div>
-        
+
+                     <div class="box-carrinho">
+                        <img src="assets/img/vestido-rosa2.jpg" alt="">
+                        <div>
+                            <h2>Vestido Rosa</h2>
+                            <p>R$ 200,00</p>
+                            <p>Tamanho: P</p>
+                            <p>Quantidade: 1</p>
+                            <img class="trash" src="assets/img/trash.png" alt="Remover item">                        
+                        </div>
+                    </div>
+
                     <!-- Adicione quantos produtos quiser aqui -->
                 </div>
                 <h3>Total: R$ 400,00</h3>

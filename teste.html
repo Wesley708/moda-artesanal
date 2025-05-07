@@ -1,45 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <link rel="icon" href="assets/img/burger.png" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
-        @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
-        body{
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(37, 37, 37);
-        }
-        h1{
-            font-size: 200px;
-            font-weight: 900;
-            color:  rgb(37, 37, 37);
-        }
-        div{
-            width: 400px;
-            height: 400px;
-            background-color: #e9e6da;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5px;
-        }
-        
-    </style>
-    
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Lista de Contatos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+    .contato {
+      background-color: white;
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 500px;
+      position: relative;
+      display: flex;
+        flex-direction: column;
+    }
+    .contato h2 {
+      margin-top: 0;
+      color: #0077cc;
+    }
+    .contato p {
+      margin: 5px 0;
+    }
+    .btn-deletar {
+      background-color: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-deletar:hover {
+      background-color: #cc0000;
+    }
+    form {
+      background-color: #fff;
+      max-width: 500px;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button[type="submit"] {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #005fa3;
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <h1>WA</h1>
-    </div>
+  <h1>Lista de Contatos</h1>
+  <div id="lista-contatos"></div>
+
+  <h2>Adicionar Novo Contato</h2>
+  <form id="form-contato">
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="telefone" placeholder="Telefone" required>
+    <input type="text" id="endereco" placeholder="Endereço" required>
+    <input type="text" id="foto" placeholder="URL da Foto (opcional)">
+    <button type="submit">Adicionar Contato</button>
+  </form>
+
+  <script>
+    const apiURL = 'https://node-mongo-api-j5of.onrender.com/contatos';
+
+    // Função para exibir os contatos
+    function carregarContatos() {
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(contatos => {
+          const lista = document.getElementById('lista-contatos');
+          lista.innerHTML = ''; // Limpa antes de adicionar de novo
+          contatos.forEach(contato => {
+            const div = document.createElement('div');
+            div.className = 'contato';
+            div.innerHTML = `
+              <h2>${contato.nome}</h2>
+              <p><strong>Email:</strong> ${contato.email}</p>
+              <p><strong>Telefone:</strong> ${contato.telefone}</p>
+              <p><strong>Endereço:</strong> ${contato.endereco}</p>
+              <button class="btn-deletar" data-id="${contato._id}">Deletar</button>
+            `;
+            lista.appendChild(div);
+          });
+
+          // Adiciona evento aos botões de deletar
+          document.querySelectorAll('.btn-deletar').forEach(botao => {
+            botao.addEventListener('click', () => {
+              const id = botao.getAttribute('data-id');
+              if (confirm('Tem certeza que deseja deletar este contato?')) {
+                fetch(`${apiURL}/${id}`, {
+                  method: 'DELETE'
+                })
+                .then(res => {
+                  if (!res.ok) throw new Error('Erro ao deletar');
+                  carregarContatos(); // Atualiza lista
+                })
+                .catch(err => {
+                  console.error(err);
+                  alert('Erro ao deletar contato.');
+                });
+              }
+            });
+          });
+        })
+        .catch(erro => {
+          console.error('Erro ao carregar contatos:', erro);
+          document.getElementById('lista-contatos').textContent = 'Erro ao carregar contatos.';
+        });
+    }
+
+    // Carrega os contatos ao abrir o site
+    carregarContatos();
+
+    // Lida com o envio do formulário
+    document.getElementById('form-contato').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const novoContato = {
+        nome: document.getElementById('nome').value,
+        email: document.getElementById('email').value,
+        telefone: document.getElementById('telefone').value,
+        endereco: document.getElementById('endereco').value,
+        foto: document.getElementById('foto').value || "#"
+      };
+
+      fetch(apiURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(novoContato)
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Erro ao adicionar contato');
+        return response.json();
+      })
+      .then(data => {
+        alert('Contato adicionado com sucesso!');
+        document.getElementById('form-contato').reset();
+        carregarContatos();
+      })
+      .catch(error => {
+        console.error(error);
+        alert('Falha ao adicionar contato.');
+      });
+    });
+  </script>
 </body>
 </html>
